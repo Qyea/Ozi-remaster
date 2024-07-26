@@ -19,3 +19,9 @@
     border-radius: 50%;
     overflow: hidden;
 }
+
+.profile-card__name{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
