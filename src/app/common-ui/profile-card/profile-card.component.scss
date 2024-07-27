@@ -1,6 +1,6 @@
 .profile-card{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr) 250px 1fr;
     grid-gap: 32px;
     padding: 32px 24px;
 
@@ -24,4 +24,12 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.profile-card__tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    height: min-content;
 }
