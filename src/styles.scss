@@ -18,7 +18,16 @@ body{
     font-family: 'JetBrains Mono', 'sans-serif';
     font-weight: 500;
     background: var(--dark-color);
-    color: var(--light-color)
+    color: var(--light-color);
+    background-image: url('/assets/images/background.jpg') ;
+}
+
+h1{
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    text-align: left;
+
 }
 
 .h6{
