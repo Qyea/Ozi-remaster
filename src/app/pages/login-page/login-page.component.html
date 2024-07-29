@@ -1,13 +1,18 @@
-<form action="" class="login-form">
+<form 
+    class="login-form" 
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+>
     <h1 class="h1">Sign in</h1>
-    <label class="ozi-control-label">
+    <label class="ozi-control-label mb16">
         User name
-        <input class="ozi-input" placeholder="Enter login" />
+        <input formControlName="username" class="ozi-input" placeholder="Enter login" />
     </label>
-    <label class="ozi-control-label">
+    <label class="ozi-control-label mb32">
         Password
-        <input class="ozi-input" placeholder="Enter password" />
+        <input formControlName="password" class="ozi-input" placeholder="Enter password" />
     </label>
+    <button class="btn btn-shadow" type="submit">Sing in</button>
 </form>
 
 <img src="/assets/svg/logo-big.svg" alt="logo" />
