@@ -7,7 +7,6 @@ import { ProfileCardComponent } from './common-ui/profile-card/profile-card.comp
   standalone: true,
   imports: [RouterOutlet, ProfileCardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-}
+export class AppComponent {}
