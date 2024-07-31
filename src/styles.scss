@@ -22,6 +22,9 @@ body {
   background: var(--dark-color);
   color: var(--light-color);
   background-image: url('/assets/images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
