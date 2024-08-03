@@ -1,0 +1,41 @@
+.profile-page__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.to-setting-btn{
+    width: 20%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.to-setting-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--dark-color);
+}
+
+.profile-page__body{
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    grid-gap: 64px;
+}
+
+.subscriber-avatar-btn{
+    width: 36px;
+    height: 36px;
+    img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+}
+
+.subscribers-wrapper{
+    display: flex;
+    gap: 6px;
+    
+}
