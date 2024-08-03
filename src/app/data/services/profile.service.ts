@@ -27,7 +27,7 @@ export class ProfileService {
   getMe() {
     return this.http.get<Profile>(`${this.baseApiUrl}account/me`).pipe(
       tap(
-        res => this.me.set(res)
+        res => this.me.set(res) 
       )
     )
   }

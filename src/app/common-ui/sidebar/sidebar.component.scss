@@ -1,6 +1,8 @@
 :host{
     display: block;
     padding: 20px 12px;
+    position: relative;
+    background: var(--dark-color);
 }
 
 .main-menu-list{
@@ -50,7 +52,7 @@
 .to-subscribers{
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .to-subscribers-link{
@@ -61,4 +63,40 @@
 .to-subscribers-icon{
     width: 18px;
     height: 18px;
+
+    color: var(--primary-color);
+}
+
+
+.sidebar__footer{
+    position: absolute;
+    bottom: 20px;
+    width: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 32px 1fr 16px;
+    grid-gap: 12px;
+    align-items: center;
+
+    padding: 4px 16px;
+
+    background: var(--dark-hover-color);
+    border-radius: 2px;
+
+    img{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+
+    .username-text{
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+}
+
+.settings-btn{
+    svg{
+        width: 14px;
+        height: 14px;
+    }
 }

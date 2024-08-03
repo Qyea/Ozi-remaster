@@ -31,3 +31,17 @@ class="ml16 mb20"
     >All subscribers</a>
     <svg icon="arrow" class="to-subscribers-icon"></svg>
 </div>
+
+<footer class="sidebar__footer">
+    @if(me(); as me){
+        @if(me.avatarUrl){
+            <img [src]="me.avatarUrl | imgUrl" alt=""/>
+        } @else {
+            <img src="/assets/images/avatar-placeholder.png" alt=""/>
+        }
+        <div class="medium-text username-text">{{me.username}}</div>
+        <a [routerLink]="['settings']" class="settings-btn">
+            <svg icon="settings"></svg>
+        </a>
+    }
+</footer>
