@@ -7,6 +7,8 @@
   --primary-color: #ae7aff;
   --grey-color: #5f646d;
   --dark-hover-color: #161616;
+
+  --light-transparent-color: rgba(255,255,255,0.75);
 }
 
 *,
@@ -63,6 +65,40 @@ h4{
   font-family: 'JetBrains Mono', 'sans-serif';
   font-size: 14px;
   line-height: 20px;
+}
+
+.ozi-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ozi-form-label__text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--light-transparent-color);
+}
+
+.ozi-form-input {
+  color: var(--light-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid var(--light-color);
+  height: 33px;
+
+  &:focus-visible{
+    outline: 1px solid var(--primary-color);
+    outline-offset: 4px;
+  }
+}
+
+.ozi-textarea{
+  height: 84px;
+  resize: none;;
 }
 
 .h6 {

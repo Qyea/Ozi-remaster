@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 24px;
 }
 
 .to-setting-btn{
@@ -19,8 +21,9 @@
 }
 
 .profile-page__body{
+    padding: 24px;
     display: grid;
-    grid-template-columns: 1fr 150px;
+    grid-template-columns: 1fr 350px;
     grid-gap: 64px;
 }
 
@@ -36,6 +39,39 @@
 
 .subscribers-wrapper{
     display: flex;
-    gap: 6px;
-    
+    align-items: center;
+    gap: 6px;   
+}
+
+.to-subscribers-search{
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--light-color);
+
+    &:before,
+    &:after{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 8px;
+        background: var(--dark-color);
+        top: 50%;
+        left: 50%;
+    }
+
+    &:before{
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    &:after{
+        transform: translateY(-50%) translateX(-50%) rotate(90deg);
+    }
+}
+
+.stack-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
 }

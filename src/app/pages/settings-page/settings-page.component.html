@@ -1,0 +1,36 @@
+<app-profile-header>
+</app-profile-header>
+
+<form class="profile-from__wrapper" [formGroup]="form">
+    <div class="profile-from">
+        <div class="two-columns">
+            <label class="ozi-form-label">
+                <span class="ozi-form-label__text">Name</span>
+                <input type="text" class="ozi-form-input" formControlName="firstName"/>
+            </label>
+            <label class="ozi-form-label">
+                <span class="ozi-form-label__text">Surname</span>
+                <input type="text" class="ozi-form-input" formControlName="lastName"/>
+            </label>
+        </div>
+        <label class="ozi-form-label">
+            <span class="ozi-form-label__text">Username</span>
+            <input type="text" class="ozi-form-input" formControlName="username"/>
+        </label>
+        <label class="ozi-form-label">
+            <span class="ozi-form-label__text">Description</span>
+            <textarea class="ozi-form-input ozi-textarea" rows="4" formControlName="description">
+    
+            </textarea>
+        </label>
+        <label class="ozi-form-label">
+            <span class="ozi-form-label__text">Skills</span>
+            <input type="text" class="ozi-form-input" formControlName="lastName"/>
+        </label>
+    </div>
+   <div>
+    <div>
+        <button class="btn">Save</button>
+    </div>
+   </div>
+</form>

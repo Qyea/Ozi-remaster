@@ -8,16 +8,26 @@
         </a>
     </header>
     <main class="profile-page__body">
-        <div></div>
+        <app-post-feed></app-post-feed>
         <div>
             <h3 class="h6 mb16">Subscribers</h3>
-            <div class="subscribers-wrapper">
+            <div class="subscribers-wrapper mb32">
                 @for(subscriber of subscribers$ | async; track subscriber.id){
                     <a class="subscriber-avatar-btn">
                         <img [src]="subscriber.avatarUrl | imgUrl" />
                     </a>
                 }
+                <a class="to-subscribers-search" [routerLink]="['/search']">
+                </a>
             </div>
+            <h3 class="h6 mb16">Skills</h3>
+            <div class="stack-wrapper mb32">
+                @for(skill of profile.stack; track skill){
+                    <div class="skill-tag">{{ skill }}</div>
+                }
+            </div>
+            <h3 class="h6 mb16">About me</h3>
+            <p class="medium-text">{{ profile.description }}</p>
         </div>
     </main>
 }
