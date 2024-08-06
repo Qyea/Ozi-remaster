@@ -1,0 +1,14 @@
+<img class="avatar" src="/assets/images/avatar-placeholder.png" alt="avatar" />
+<div class="dropzone" tabindex="0" (keyup.enter)="fileDrop.click()">
+    <div class="dropzone-content">
+        <svg class="svg-icon" icon="upload"></svg>
+        <span class="medium-text">Dropdown a photo or upload</span>
+    </div>
+    <input
+        tabindex="-1"
+        class="avatar-input" 
+        type="file"
+        #fileDrop
+        (change)="fileBrowserHandler($event)"
+    />
+</div>

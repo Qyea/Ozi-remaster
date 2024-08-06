@@ -7,11 +7,12 @@ import { switchMap } from 'rxjs';
 import { toObservable } from '@angular/core/rxjs-interop';
 import { ImgUrlPipe } from "../../helpers/pipes/img-url.pipe";
 import { PostFeedComponent } from "./post-feed/post-feed.component";
+import { SvgIconComponent } from '../../common-ui/svg-icon/svg-icon.component';
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [ProfileHeaderComponent, AsyncPipe, RouterLink, ImgUrlPipe, PostFeedComponent],
+  imports: [SvgIconComponent, ProfileHeaderComponent, AsyncPipe, RouterLink, ImgUrlPipe, PostFeedComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
 })
