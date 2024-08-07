@@ -7,7 +7,7 @@ class="ml16 mb20"
     <ul class="main-menu-list">
         @for(menuItem of menuItems; track menuItem.icon){
             <li>
-                <a class="menu-item" [routerLink]="[menuItem.link]">
+                <a class="menu-item" [routerLink]="[menuItem.link]" routerLinkActive="active">
                     <svg [icon]="menuItem.icon"></svg>
                     <span>{{ menuItem.label }}</span>
                 </a>

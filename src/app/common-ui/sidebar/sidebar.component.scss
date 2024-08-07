@@ -35,6 +35,8 @@
     text-align: left;
     text-decoration: none;
 
+
+    &.active,
     &:hover, :focus, :focus-visible{
         background: var(--dark-hover-color);
         color: var(--primary-color);
