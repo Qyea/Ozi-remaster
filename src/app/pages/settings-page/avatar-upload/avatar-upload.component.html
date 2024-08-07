@@ -1,5 +1,5 @@
-<img class="avatar" src="/assets/images/avatar-placeholder.png" alt="avatar" />
-<div class="dropzone" tabindex="0" (keyup.enter)="fileDrop.click()">
+<img class="avatar" [src]="preview()" alt="avatar" />
+<div dnd class="dropzone" tabindex="0" (keyup.enter)="fileDrop.click()" (fileDropped)="onFileDropped($event)">
     <div class="dropzone-content">
         <svg class="svg-icon" icon="upload"></svg>
         <span class="medium-text">Dropdown a photo or upload</span>
