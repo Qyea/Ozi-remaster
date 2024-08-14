@@ -2,12 +2,12 @@
 <div class="input-wrapper">
     @if(me(); as me){
         @if(me.avatarUrl){
-            <img [src]="me.avatarUrl | imgUrl" alt=""/>
+            <img [src]="me.avatarUrl | imgUrl" alt="Avatar placeholder" class="post-img"/>
         } @else {
-            <img src="/assets/images/avatar-placeholder.png" alt=""/>
+            <img src="/assets/images/avatar-placeholder.png" alt="Avatar" class="post-img"/>
         }
        
     }
-<input class="post-input" placeholder="Write about your doing" />
-<i class="pi pi-chevron-right input-icon"></i>
+    <input class="post-input" placeholder="Write about your doing" />
+    <i class="pi pi-chevron-right input-icon"></i>
 </div>

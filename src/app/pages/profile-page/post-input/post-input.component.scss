@@ -10,18 +10,30 @@
 }
 
 .post-input {
-    padding: 1rem 0.75rem;
+    padding: 1rem 4rem;
+    padding-right: 3rem;
 
     border: none;
     border-radius: 4px;
 
     font-family: 'JetBrains Mono';
     font-weight: 500;
+
+    border: 2px solid var(--primary-dark-color);
+    border-radius: 4px;
+    
+    background: var(--light-color);
+    color: var(--dark-color);
+  
+    &:focus-visible{
+      outline: 1px solid var(--primary-light-color);
+      outline-offset: 2px;
+    }
 }
 
 .input-icon {
     position: absolute;
-    bottom: 0.7rem;
+    top: 1rem;
     right: 0.75rem;
 
     font-weight: 700;
@@ -33,4 +45,13 @@
     &:hover{
         color: var(--primary-dark-color)
     }
+}
+
+.post-img {
+    position: absolute;
+    top: 0.7rem;
+    left: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 }
