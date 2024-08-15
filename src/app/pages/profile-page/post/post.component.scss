@@ -1,0 +1,17 @@
+:host{
+    display: flex;
+    padding: 1.75rem;
+    background: rgba(255, 235, 205, 0.15);
+}
+
+.post-user-img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
