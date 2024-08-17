@@ -1,6 +1,21 @@
 :host{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 32px 1fr 44px;
+    grid-gap: 12px;
+
+    align-items: center;
+
+    border: 2px solid var(--primary-dark-color);
+    border-radius: 4px;
+    
+    background: var(--light-color);
+
+    &:hover,
+    &:focus-visible{
+      outline: 1px solid var(--primary-light-color);
+      outline-offset: 2px;
+    }
 }
 
 .input-wrapper{
@@ -9,9 +24,8 @@
     flex-direction: column;
 }
 
-.post-input {
-    padding: 1rem 4rem;
-    padding-right: 3rem;
+.post-textarea {
+    resize: none;
 
     border: none;
     border-radius: 4px;
@@ -19,15 +33,12 @@
     font-family: 'JetBrains Mono';
     font-weight: 500;
 
-    border: 2px solid var(--primary-dark-color);
-    border-radius: 4px;
-    
     background: var(--light-color);
     color: var(--dark-color);
   
+    &:hover,
     &:focus-visible{
-      outline: 1px solid var(--primary-light-color);
-      outline-offset: 2px;
+      outline: none
     }
 }
 
