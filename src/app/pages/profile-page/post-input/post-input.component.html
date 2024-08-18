@@ -2,7 +2,12 @@
     <app-avatar-circle class="size32" [avatarUrl]="me.avatarUrl"></app-avatar-circle>
    
 }
-<textarea class="post-textarea" (input)="onTextAreaInput($event)" placeholder="Write about your doing" >
+<textarea 
+    [(ngModel)]="postText" 
+    class="post-textarea" 
+    (input)="onTextAreaInput($event)" 
+></textarea>
 
-</textarea>
-<i class="pi pi-chevron-right input-icon"></i>
+<button class="btn-icon" (click)="onCreatePost()">
+    <i class="pi pi-chevron-right input-icon"></i>
+</button>
