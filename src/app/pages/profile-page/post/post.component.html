@@ -1,14 +1,23 @@
-<div class="post">
+@if(post(); as post){
+  <div class="post">
     <div class="post-header">
-        <img src="/assets/images/avatar-placeholder.png" alt="Avatar placeholder" class="post-user-img" />
+        <app-avatar-circle class="size32" [avatarUrl]="post.author.avatarUrl"></app-avatar-circle>
         <div class="author">
-            <div class="username">User Name</div>
-            <p class="name">username</p>
+            <div class="username">{{ post.author.firstName}} {{post.author.lastName}} </div>
+            <p class="name">{{ post.author.username }}</p>
         </div>
-        
+        <div class="post-body">
+          {{ post.content}}
+        </div>
+        <div class="post-footer">
+          Created: {{post.createdAt | date: 'HH:mm dd.MM.YY'}}
+        </div>
     </div>
    <div></div>
 </div>
+
+}
+
 
 
 <!-- "id": 0,
