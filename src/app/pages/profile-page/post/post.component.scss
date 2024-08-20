@@ -1,8 +1,12 @@
 :host{
-    display: flex;
-    padding: 1.75rem;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 32px;
+    grid-gap: 16px;
     background: rgba(255, 235, 205, 0.15);
 }
+
+
 
 .post-user-img{
     width: 32px;
@@ -17,8 +21,17 @@
 }
 
 .post-body{
-    display: grid;
+    display: block;
+    max-width: 50vh;
     grid-gap: 12px;
+    white-space: pre-line;
+    
+}
+
+.comment-amount{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .post-header{
@@ -26,4 +39,11 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
+}
+
+.comments-length{
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
 }

@@ -6,12 +6,19 @@
             <div class="username">{{ post.author.firstName}} {{post.author.lastName}} </div>
             <p class="name">{{ post.author.username }}</p>
         </div>
-        <div class="post-body">
-          {{ post.content}}
-        </div>
-        <div class="post-footer">
-          Created: {{post.createdAt | date: 'HH:mm dd.MM.YY'}}
-        </div>
+        
+    </div>
+    <div class="post-body">
+      {{ post.content}}
+    </div>
+    <div class="post-counters">
+      <span class="comment-amount">
+        <i class="pi pi-comment" style="font-size: 1rem"></i>
+        <span class="comments-length">{{post.comments.length}}</span>
+      </span>
+    </div>
+    <div class="post-footer">
+      Created: {{post.createdAt | date: 'HH:mm dd.MM.YY'}}
     </div>
    <div></div>
 </div>
