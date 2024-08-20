@@ -1,4 +1,4 @@
-import { Component, inject, Renderer2 } from '@angular/core';
+import { Component, inject, input, Renderer2 } from '@angular/core';
 import { ImgUrlPipe } from '../../../helpers/pipes/img-url.pipe';
 import { ProfileService } from '../../../data/services/profile.service';
 import { AvatarCircleComponent } from "../../../common-ui/avatar-circle/avatar-circle.component";
@@ -14,6 +14,7 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './post-input.component.scss'
 })
 export class PostInputComponent {
+  isCommentInput = input(false)
   r2 = inject(Renderer2)
   postService = inject(PostService)
   profileService = inject(ProfileService)
@@ -31,6 +32,19 @@ export class PostInputComponent {
 
   onCreatePost() {
     if(!this.postText) return
+
+    if(this.isCommentInput()){
+      firstValueFrom(
+        this.postService.createPost({
+          title: 'Some post',
+          content: this.postText,
+          authorId: this.profile()!.id
+        })
+      ).then(()=>{
+        this.postText = ''
+      })
+      return
+    }
 
     firstValueFrom(
       this.postService.createPost({

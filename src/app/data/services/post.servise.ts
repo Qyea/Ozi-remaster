@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable, signal } from "@angular/core";
-import { Post, PostCreateDto } from "../interfaces/post.interface";
+import { Comment, CommentCreateDto, Post, PostCreateDto } from "../interfaces/post.interface";
 import { Profile } from "../interfaces/profile.interface";
 import { switchMap, tap } from "rxjs";
 
@@ -26,5 +26,12 @@ export class PostService {
         .pipe(
             tap(res => this.posts.set(res))
         )
+    }
+
+    createComment(payload: CommentCreateDto){
+        return this.#http.post<Comment>(`${this.baseApiUrl}post/`, payload)
+            .pipe(switchMap(()=>{
+                return this.fetchPosts()
+            }))
     }
 }

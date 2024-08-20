@@ -1,17 +1,22 @@
 :host{
     display: grid;
-    padding: 1rem;
     grid-template-columns: 32px;
     grid-gap: 16px;
+    padding: 1rem;
+
     background: rgba(255, 235, 205, 0.15);
+    border: 1px solid var(--light-color);
 }
 
 
+.username {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-.post-user-img{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+.name{
+    color: var(--primary-color);
+    font-size: 12px;
 }
 
 .post-header {
@@ -21,9 +26,8 @@
 }
 
 .post-body{
-    display: block;
-    max-width: 50vh;
-    grid-gap: 12px;
+    display: grid;
+    word-break:normal;
     white-space: pre-line;
     
 }

@@ -31,3 +31,9 @@ export interface Comment {
     createdAt: Date
     updatedAt: Date
 }
+export interface CommentCreateDto {
+    text: string
+    authorId: number
+    postId: number
+    //commentId: number
+}
