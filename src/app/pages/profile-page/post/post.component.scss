@@ -1,6 +1,5 @@
 :host{
     display: grid;
-    grid-template-columns: 32px;
     grid-gap: 16px;
     padding: 1rem;
 
@@ -27,7 +26,7 @@
 
 .post-body{
     display: grid;
-    word-break:normal;
+    word-break: break-all;
     white-space: pre-line;
     
 }

@@ -18,6 +18,10 @@
     }
 }
 
+:host.comment{
+  border: 1px dashed var(--primary-dark-color);
+}
+
 .input-wrapper{
     position: relative;
     display: flex;
@@ -44,4 +48,11 @@
     }
 }
 
+.post__comments-wraper{
+  display: grid;
+  grid-gap: 8px;
+
+  max-height: 150px;
+  overflow-y: scroll;
+}
 

@@ -29,9 +29,6 @@ export class PostService {
     }
 
     createComment(payload: CommentCreateDto){
-        return this.#http.post<Comment>(`${this.baseApiUrl}post/`, payload)
-            .pipe(switchMap(()=>{
-                return this.fetchPosts()
-            }))
+        return this.#http.post<Comment>(`${this.baseApiUrl}comment/`, payload)
     }
 }

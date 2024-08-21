@@ -23,10 +23,18 @@
     <span class="comments-length">{{post.comments.length}}</span>
   </span>
 </div>
+<div class="post__comments-wraper">
+  @for(comment of post.comments; track comment.id){
+    <app-comment
+      [comment]="comment"
+    ></app-comment>
+  }
+</div>
 <div class="post-footer">
   Created: {{post.createdAt | date: 'HH:mm dd.MM.YY'}}
 </div>
-<app-post-input  [isCommentInput]=true>
+
+<app-post-input [postId]="post.id" [isCommentInput]=true>
 </app-post-input>
 
 

@@ -1,4 +1,4 @@
-import { Component, inject, input, Renderer2 } from '@angular/core';
+import { Component, HostBinding, inject, input, Renderer2 } from '@angular/core';
 import { ImgUrlPipe } from '../../../helpers/pipes/img-url.pipe';
 import { ProfileService } from '../../../data/services/profile.service';
 import { AvatarCircleComponent } from "../../../common-ui/avatar-circle/avatar-circle.component";
@@ -14,14 +14,20 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './post-input.component.scss'
 })
 export class PostInputComponent {
-  isCommentInput = input(false)
   r2 = inject(Renderer2)
   postService = inject(PostService)
   profileService = inject(ProfileService)
 
+  isCommentInput = input(false)
+  postId = input<number>(0)
   profile = this.profileService.me
 
   postText = ''
+
+  @HostBinding('class.comment')
+  get isComment(){
+    return this.isCommentInput()
+  }
 
   onTextAreaInput(event: Event){
     const textarea = event.target as HTMLTextAreaElement
@@ -35,10 +41,10 @@ export class PostInputComponent {
 
     if(this.isCommentInput()){
       firstValueFrom(
-        this.postService.createPost({
-          title: 'Some post',
-          content: this.postText,
-          authorId: this.profile()!.id
+        this.postService.createComment({
+          text: this.postText,
+          authorId: this.profile()!.id,
+          postId: this.postId()
         })
       ).then(()=>{
         this.postText = ''
@@ -56,4 +62,7 @@ export class PostInputComponent {
       this.postText = ''
     })
   }
+
+  
 }
+
