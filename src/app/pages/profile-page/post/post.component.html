@@ -20,11 +20,11 @@
 <div class="post-counters">
   <span class="comment-amount">
     <i class="pi pi-comment" style="font-size: 1rem"></i>
-    <span class="comments-length">{{post.comments.length}}</span>
+    <span class="comments-length">{{comments().length}}</span>
   </span>
 </div>
-<div class="post__comments-wraper">
-  @for(comment of post.comments; track comment.id){
+<div class="post__comments-wrapper">
+  @for(comment of comments(); track comment.id){
     <app-comment
       [comment]="comment"
     ></app-comment>
@@ -34,7 +34,7 @@
   Created: {{post.createdAt | date: 'HH:mm dd.MM.YY'}}
 </div>
 
-<app-post-input [postId]="post.id" [isCommentInput]=true>
+<app-post-input (created)="onCreated()" [postId]="post.id" [isCommentInput]=true>
 </app-post-input>
 
 

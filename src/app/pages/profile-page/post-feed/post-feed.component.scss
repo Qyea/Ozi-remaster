@@ -1,4 +1,5 @@
 :host {
-    max-height: 60vh;
+    display: grid;
+    grid-gap: 16px;
     overflow-y: scroll;
 }

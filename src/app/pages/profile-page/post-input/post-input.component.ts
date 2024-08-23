@@ -1,4 +1,4 @@
-import { Component, HostBinding, inject, input, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, HostBinding, inject, input, Output, Renderer2 } from '@angular/core';
 import { ImgUrlPipe } from '../../../helpers/pipes/img-url.pipe';
 import { ProfileService } from '../../../data/services/profile.service';
 import { AvatarCircleComponent } from "../../../common-ui/avatar-circle/avatar-circle.component";
@@ -24,6 +24,8 @@ export class PostInputComponent {
 
   postText = ''
 
+  @Output() created = new EventEmitter()
+
   @HostBinding('class.comment')
   get isComment(){
     return this.isCommentInput()
@@ -48,6 +50,7 @@ export class PostInputComponent {
         })
       ).then(()=>{
         this.postText = ''
+        this.created.emit()
       })
       return
     }

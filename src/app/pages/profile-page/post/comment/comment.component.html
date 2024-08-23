@@ -11,6 +11,7 @@
         </span>
         <span>
             {{comment.createdAt | date: 'HH:mm dd.MM.YY'}}
+            {{comment.createdAt | timeAgo}}
         </span>
     </div>
     <div class="comment-text">
