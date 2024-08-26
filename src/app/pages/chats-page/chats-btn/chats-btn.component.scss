@@ -1,0 +1,7 @@
+:host{
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    grid-gap: 1rem;
+    padding: 24px 20px;
+    border-bottom: var(--primary-dark-border);
+}

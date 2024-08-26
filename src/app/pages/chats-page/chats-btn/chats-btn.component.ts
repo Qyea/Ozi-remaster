@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { AvatarCircleComponent } from "../../../common-ui/avatar-circle/avatar-circle.component";
 
 @Component({
-  selector: 'app-chats-btn',
+  selector: 'button[chats]',
   standalone: true,
-  imports: [],
+  imports: [AvatarCircleComponent],
   templateUrl: './chats-btn.component.html',
   styleUrl: './chats-btn.component.scss'
 })
