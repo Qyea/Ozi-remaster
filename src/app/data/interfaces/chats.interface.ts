@@ -4,6 +4,7 @@ export interface Chat {
     id: number
     userFirst: Profile
     userSecond: Profile
+    companion?: Profile
     messages: []
 }
 
