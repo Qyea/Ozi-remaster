@@ -1,11 +1,17 @@
+<!-- eslint-disable @angular-eslint/template/elements-content -->
 <div class="charts-filters-input__wrapper">
-    <label class="ozi-control-label">
-        <span>User name</span>
-        <input
-          class="ozi-input"
-          placeholder="Enter login" />
-    </label>
+<label class="ozi-form-label">
+    <span class="ozi-form-label__text">Search chat</span>
+    <input type="text" placeholder="Search" class="ozi-form-input" [formControl]="filterChatsControl" />
+</label>
 </div>
 
+@for (chat of chats$ | async; track chat.id){
+    <button 
+      chats
+      [chat]="chat"
+      [routerLink]="[chat.id]"
+      routerLinkActive="active"
+    ></button>
+}
 <!-- <button chats></button> -->
-<button chats>Button</button>

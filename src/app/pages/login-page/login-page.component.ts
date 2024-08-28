@@ -6,7 +6,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
-import { from } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -30,7 +29,8 @@ export class LoginPageComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      //@ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-expect-error
       this.authService.login(this.form.value).subscribe(res => {
         this.router.navigate(['']);
         console.log(res);

@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
-import { Chat, Message } from "../interfaces/chats.interface";
+import { Chat, LastMessageResponse, Message } from "../interfaces/chats.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -16,7 +16,7 @@ export class ChatService {
     }
 
     getMyChats(){
-        return this.http.get<Chat[]>(`${this.chatUrl}get_my_chats/`)
+        return this.http.get<LastMessageResponse[]>(`${this.chatUrl}get_my_chats/`)
     }
 
     getChatById(chatId: number){

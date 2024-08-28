@@ -42,7 +42,7 @@ export class ProfilePageComponent {
     async sendMessage(userId: number){
       firstValueFrom(this.chatService.createChat(userId))
       .then((res)=>{
-        this.router.navigate(['/chats', res.id])
+        return this.router.navigate(['/chats', res.id])
       }) 
     }
 }
