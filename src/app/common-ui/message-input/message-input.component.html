@@ -1,1 +1,13 @@
-<p>message-input works!</p>
+@if (me(); as me) {
+  <app-avatar-circle
+    class="size32"
+    [avatarUrl]="me.avatarUrl"></app-avatar-circle>
+}
+<textarea
+  [(ngModel)]="postText"
+  class="post-textarea"
+  (input)="onTextAreaInput($event)"></textarea>
+
+<button class="btn-icon" (click)="onCreatePost()">
+  <i class="pi pi-chevron-right input-icon"></i>
+</button>

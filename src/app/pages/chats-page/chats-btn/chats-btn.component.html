@@ -1,15 +1,14 @@
 <div>btn-works</div>
 
-@if(chat(); as chat){
-    <app-avatar-circle 
+@if (chat(); as chat) {
+  <app-avatar-circle
     class="size32"
-    [avatarUrl]="chat.userFrom.avatarUrl"
-    ></app-avatar-circle>
+    [avatarUrl]="chat.userFrom.avatarUrl"></app-avatar-circle>
 
-
-    <div class="last-message__wraper">
-        <div class="chat-user medium-text"> {{ chat.userFrom.firstName }}  {{ chat.userFrom.lastName }}</div>
-        <div class="medium-text"> {{ chat.message ?? '...' }} </div>
+  <div class="last-message__wraper">
+    <div class="chat-user medium-text">
+      {{ chat.userFrom.firstName }} {{ chat.userFrom.lastName }}
     </div>
+    <div class="medium-text">{{ chat.message ? chat.message : '...' }}</div>
+  </div>
 }
-
