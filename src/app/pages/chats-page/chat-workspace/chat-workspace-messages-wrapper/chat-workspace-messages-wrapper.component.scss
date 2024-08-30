@@ -3,3 +3,8 @@
   grid-template-rows: 1fr min-content;
   padding: 1rem 1.25rem;
 }
+
+.messages-wrapper {
+  display: grid;
+  grid-gap: 0.75rem;
+}

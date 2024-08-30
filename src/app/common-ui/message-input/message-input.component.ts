@@ -20,7 +20,7 @@ export class MessageInputComponent {
   r2 = inject(Renderer2)
   me = inject(ProfileService).me
 
-  postText = ''
+  messageText = ''
 
   @Output() created = new EventEmitter<string>()
 
@@ -32,9 +32,9 @@ export class MessageInputComponent {
   }
 
   onCreatePost() {
-    if (!this.postText) return
+    if (!this.messageText) return
 
-    this.postText = ''
-    this.created.emit(this.postText)
+    this.created.emit(this.messageText)
+    this.messageText = ''
   }
 }

@@ -2,8 +2,7 @@
 @import 'margins';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import "primeicons/primeicons.css";
-
+@import 'primeicons/primeicons.css';
 
 :root {
   --dark-color: #000000;
@@ -14,10 +13,10 @@
   --primary-dark-color: #9a71dc;
   --grey-color: #5f646d;
   --dark-hover-color: #161616;
+  --message-color: #404040;
+  --light-transparent-color: rgba(255, 255, 255, 0.75);
 
-  --light-transparent-color: rgba(255,255,255,0.75);
-
-  --primary-dark-border: 1px solid var(--primary-dark-color)
+  --primary-dark-border: 1px solid var(--primary-dark-color);
 }
 
 *,
@@ -52,7 +51,7 @@ h1 {
   text-align: left;
 }
 
-h4{
+h4 {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 800;
@@ -73,10 +72,10 @@ h4{
 
   padding: 12px 20px;
   margin-top: 8px;
-  
+
   border: 2px solid var(--primary-dark-color);
   border-radius: 4px;
-  
+
   background: var(--light-color);
   color: var(--dark-color);
   font-weight: 500;
@@ -84,7 +83,7 @@ h4{
   font-size: 14px;
   line-height: 20px;
 
-  &:focus-visible{
+  &:focus-visible {
     outline: 1px solid var(--primary-light-color);
     outline-offset: 2px;
   }
@@ -113,15 +112,15 @@ h4{
   border-bottom: 1px solid var(--light-color);
   height: 33px;
 
-  &:focus-visible{
+  &:focus-visible {
     outline: 1px solid var(--primary-color);
     outline-offset: 4px;
   }
 }
 
-.ozi-textarea{
+.ozi-textarea {
   height: 84px;
-  resize: none;;
+  resize: none;
 }
 
 .h6 {
@@ -174,12 +173,14 @@ h4{
 
   cursor: pointer;
 
-  &:hover, &:focus-visible,&:active {
+  &:hover,
+  &:focus-visible,
+  &:active {
     background: var(--primary-color);
-    outline: none  ;
-  } 
+    outline: none;
+  }
 }
-.btn-icon{
+.btn-icon {
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--primary-color);
   border-radius: 4px;
@@ -188,10 +189,10 @@ h4{
   color: var(--dark-color);
   cursor: pointer;
 
-  &:hover, &:focus-visible,&:active {
+  &:hover,
+  &:focus-visible,
+  &:active {
     background: var(--primary-color);
-    outline: none  ;
-  } 
+    outline: none;
+  }
 }
-
-
