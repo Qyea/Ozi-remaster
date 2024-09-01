@@ -7,4 +7,6 @@
 .messages-wrapper {
   display: grid;
   grid-gap: 0.75rem;
+  min-height: 100%;
+  overflow-y: scroll;
 }

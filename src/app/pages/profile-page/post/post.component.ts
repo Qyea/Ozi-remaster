@@ -1,18 +1,23 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core';
-import { Post, PostComment } from '../../../data/interfaces/post.interface';
-import { AvatarCircleComponent } from "../../../common-ui/avatar-circle/avatar-circle.component";
-import { DatePipe } from "@angular/common";
-import { PostInputComponent } from '../post-input/post-input.component';
-import { CommentComponent } from './comment/comment.component';
-import { PostService } from '../../../data/services/post.servise';
-import { firstValueFrom } from 'rxjs';
+import { Component, inject, input, OnInit, signal } from '@angular/core'
+import { Post, PostComment } from '../../../data/interfaces/post.interface'
+import { AvatarCircleComponent } from '../../../common-ui/avatar-circle/avatar-circle.component'
+import { DatePipe } from '@angular/common'
+import { PostInputComponent } from '../post-input/post-input.component'
+import { CommentComponent } from './comment/comment.component'
+import { PostService } from '../../../data/services/post.serviсe'
+import { firstValueFrom } from 'rxjs'
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [AvatarCircleComponent, DatePipe, PostInputComponent, CommentComponent],
+  imports: [
+    AvatarCircleComponent,
+    DatePipe,
+    PostInputComponent,
+    CommentComponent,
+  ],
   templateUrl: './post.component.html',
-  styleUrl: './post.component.scss'
+  styleUrl: './post.component.scss',
 })
 export class PostComponent implements OnInit {
   post = input<Post>()
@@ -24,8 +29,10 @@ export class PostComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.comments.set(this.post()!.comments)
   }
-  async onCreated(){
-    const comments = await firstValueFrom(this.postService.getCommentsByPostId(this.post()!.id)) 
+  async onCreated() {
+    const comments = await firstValueFrom(
+      this.postService.getCommentsByPostId(this.post()!.id)
+    )
 
     this.comments.set(comments)
   }

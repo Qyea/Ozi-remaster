@@ -1,17 +1,25 @@
-import { Component, EventEmitter, HostBinding, inject, input, Output, Renderer2 } from '@angular/core';
-import { ImgUrlPipe } from '../../../helpers/pipes/img-url.pipe';
-import { ProfileService } from '../../../data/services/profile.service';
-import { AvatarCircleComponent } from "../../../common-ui/avatar-circle/avatar-circle.component";
-import { PostService } from '../../../data/services/post.servise';
-import { FormsModule } from '@angular/forms';
-import { firstValueFrom } from 'rxjs';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  inject,
+  input,
+  Output,
+  Renderer2,
+} from '@angular/core'
+import { ImgUrlPipe } from '../../../helpers/pipes/img-url.pipe'
+import { ProfileService } from '../../../data/services/profile.service'
+import { AvatarCircleComponent } from '../../../common-ui/avatar-circle/avatar-circle.component'
+import { PostService } from '../../../data/services/post.serviсe'
+import { FormsModule } from '@angular/forms'
+import { firstValueFrom } from 'rxjs'
 
 @Component({
   selector: 'app-post-input',
   standalone: true,
   imports: [ImgUrlPipe, AvatarCircleComponent, FormsModule],
   templateUrl: './post-input.component.html',
-  styleUrl: './post-input.component.scss'
+  styleUrl: './post-input.component.scss',
 })
 export class PostInputComponent {
   r2 = inject(Renderer2)
@@ -27,11 +35,11 @@ export class PostInputComponent {
   @Output() created = new EventEmitter()
 
   @HostBinding('class.comment')
-  get isComment(){
+  get isComment() {
     return this.isCommentInput()
   }
 
-  onTextAreaInput(event: Event){
+  onTextAreaInput(event: Event) {
     const textarea = event.target as HTMLTextAreaElement
 
     this.r2.setStyle(textarea, 'height', 'auto')
@@ -39,16 +47,16 @@ export class PostInputComponent {
   }
 
   onCreatePost() {
-    if(!this.postText) return
+    if (!this.postText) return
 
-    if(this.isCommentInput()){
+    if (this.isCommentInput()) {
       firstValueFrom(
         this.postService.createComment({
           text: this.postText,
           authorId: this.profile()!.id,
-          postId: this.postId()
+          postId: this.postId(),
         })
-      ).then(()=>{
+      ).then(() => {
         this.postText = ''
         this.created.emit()
       })
@@ -59,13 +67,10 @@ export class PostInputComponent {
       this.postService.createPost({
         title: 'Some post',
         content: this.postText,
-        authorId: this.profile()!.id
+        authorId: this.profile()!.id,
       })
-    ).then(()=>{
+    ).then(() => {
       this.postText = ''
     })
   }
-
-  
 }
-
