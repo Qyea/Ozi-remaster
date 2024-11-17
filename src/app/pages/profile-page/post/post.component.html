@@ -1,46 +1,46 @@
-@if(post(); as post){
+@if (post(); as post) {
   <div class="post-header">
-    <app-avatar-circle class="size32" [avatarUrl]="post.author.avatarUrl"></app-avatar-circle>
+    <app-avatar-circle
+      class="size32"
+      [avatarUrl]="post.author.avatarUrl"></app-avatar-circle>
     <div class="author">
-        <div class="username">
-          <p>
-            {{ post.author.firstName}}
-          </p>
-          <p>
-            {{post.author.lastName}} 
-          </p>
-         </div>
-        <p class="name">&commat;{{ post.author.username }}</p>
+      <div class="username">
+        <p>
+          {{ post.author.firstName }}
+        </p>
+        <p>
+          {{ post.author.lastName }}
+        </p>
+      </div>
+      <p class="name">&commat;{{ post.author.username }}</p>
     </div>
-    
-</div>
-<div class="post-body">
-  {{ post.content}}
-</div>
-<div class="post-counters">
-  <span class="comment-amount">
-    <i class="pi pi-comment" style="font-size: 1rem"></i>
-    <span class="comments-length">{{comments().length}}</span>
-  </span>
-</div>
-<div class="post__comments-wrapper">
-  @for(comment of comments(); track comment.id){
-    <app-comment
-      [comment]="comment"
-    ></app-comment>
-  }
-</div>
-<div class="post-footer">
-  Created: {{post.createdAt | date: 'HH:mm dd.MM.YY'}}
-</div>
+  </div>
+  <div class="post-content">
+    <div class="post-body">
+      {{ post.content }}
+    </div>
+    <div class="post-counters">
+      <span class="comment-amount">
+        <i class="pi pi-comment" style="font-size: 1rem"></i>
+        <span class="comments-length">{{ comments().length }}</span>
+      </span>
+    </div>
+    <div class="post__comments-wrapper">
+      @for (comment of comments(); track comment.id) {
+        <app-comment [comment]="comment"></app-comment>
+      }
+    </div>
+    <div class="post-footer">
+      Created: {{ post.createdAt | date: 'HH:mm dd.MM.YY' }}
+    </div>
+  </div>
 
-<app-post-input (created)="onCreated()" [postId]="post.id" [isCommentInput]=true>
-</app-post-input>
-
-
+  <app-post-input
+    (created)="onCreated()"
+    [postId]="post.id"
+    [isCommentInput]="true">
+  </app-post-input>
 }
-
-
 
 <!-- "id": 0,
     "title": "string",

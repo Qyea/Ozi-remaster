@@ -1,5 +1,7 @@
 :host {
-    display: grid;
-    grid-gap: 16px;
-    overflow-y: scroll;
+  display: grid;
+  grid-gap: 16px;
+  overflow-y: scroll;
+  scrollbar-color: rgba(255, 235, 205, 0.45) transparent;
+  scrollbar-width: thin;
 }

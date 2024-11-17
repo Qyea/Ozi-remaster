@@ -1,52 +1,60 @@
-:host{
-    display: grid;
-    grid-gap: 16px;
-    padding: 1rem;
+:host {
+  display: grid;
+  grid-gap: 16px;
 
-    background: rgba(255, 235, 205, 0.15);
-    border: 1px solid var(--light-color);
+  background: rgba(255, 235, 205, 0.15);
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
 }
-
 
 .username {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.name{
-    color: var(--primary-color);
-    font-size: 12px;
+.name {
+  color: var(--light-color);
+  font-size: 12px;
 }
 
 .post-header {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.5rem 0.75rem;
+
+  background: rgba(255, 235, 205, 0.35);
 }
 
-.post-body{
-    display: grid;
-    word-break: break-all;
-    white-space: pre-line;
-    
+.post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0 0.75rem;
 }
 
-.comment-amount{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.post-body {
+  display: grid;
+  word-break: break-all;
+  white-space: pre-line;
 }
 
-.post-header{
-    color: var(--primary-dark-color);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 20px;
+.comment-amount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.comments-length{
-    color: var(--primary-color);
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 16px;
+.post-header {
+  color: var(--light-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.comments-length {
+  color: var(--primary-color);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
 }
